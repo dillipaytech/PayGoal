@@ -1,0 +1,11 @@
+# Dependencies and build output (frontend/ and backend/)
+node_modules/
+dist/
+
+# Secrets: never commit
+.env
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db

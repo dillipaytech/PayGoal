@@ -1,0 +1,3 @@
+# Store text files with Linux (LF) line endings: the production server is Ubuntu
+* text=auto eol=lf
+*.png binary
