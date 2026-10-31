@@ -55,15 +55,13 @@ export const company = {
   website: 'paygoal.in',
   websiteUrl: 'https://paygoal.in',
 
-  email: 'support@paygoal.in',
+  // Main contact: Contact Us section and footer
+  email: 'admin@paygoal.in',
+  phoneDisplay: '+91 93551 28299',
+  phoneHref: 'tel:+919355128299',
 
-  // Phone (display + dialable form)
-  phoneDisplay: '+91 93550 80884',
-  phoneHref: 'tel:+919355080884',
-
-  // WhatsApp: assumed to be the same number as the phone. Change if different.
-  whatsappHref: 'https://wa.me/919355080884',
-
+  // WhatsApp: assumed to be the same as the main phone number. Change if different.
+  whatsappHref: 'https://wa.me/919355128299',
   // PLACEHOLDER: replace with real working hours
   hours: 'Monday – Saturday, 10:00 am – 6:00 pm IST',
 
@@ -426,6 +424,7 @@ export const legal: Record<'privacy' | 'terms' | 'refund' | 'cancellation', Lega
       'If you create a user account, we store your name, contact details and business details to manage your account, onboarding and support requests.',
       'We do not sell personal information. For questions about privacy, write to us at the email address listed on this page.',
     ],
+    contact: true,
   },
   terms: {
     title: 'Terms of Use',
@@ -435,6 +434,7 @@ export const legal: Record<'privacy' | 'terms' | 'refund' | 'cancellation', Lega
       'Illustrations on this website, including dashboard previews, are for representation only and do not show real data.',
       'All trademarks and content on this website belong to their respective owners. For any questions, please contact us.',
     ],
+    contact: true,
   },
   refund: {
     title: 'Refund Policy',

@@ -277,9 +277,12 @@ export default function Footer() {
           <p>
             © {year} {company.legalName}. All rights reserved.
           </p>
-          <p>
+          <p className="flex flex-wrap gap-x-5 gap-y-1">
             <a href={`mailto:${company.email}`} className="hover:text-snow">
               {company.email}
+            </a>
+            <a href={company.phoneHref} className="hover:text-snow">
+              {company.phoneDisplay}
             </a>
           </p>
         </div>
