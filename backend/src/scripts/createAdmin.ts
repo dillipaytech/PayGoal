@@ -10,10 +10,11 @@ import { parseArgs } from 'node:util'
 import bcrypt from 'bcryptjs'
 import { connectDb, disconnectDb } from '../db.js'
 import { UserModel } from '../models/User.js'
+import { BRAND } from '../config.js'
 
 const { values } = parseArgs({ options: { email: { type: 'string' }, name: { type: 'string' } } })
 const email = values.email?.trim().toLowerCase()
-const name = values.name?.trim() || 'PayGoal Admin'
+const name = values.name?.trim() || `${BRAND} Admin`
 if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
   console.error('Usage: npm run create-admin -- --email you@paygoal.in --name "Your Name"')
   process.exit(1)

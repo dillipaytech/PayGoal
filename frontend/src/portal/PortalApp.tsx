@@ -14,6 +14,7 @@ import AdminPartners from './admin/Partners'
 import AdminPartnerDetail from './admin/PartnerDetail'
 import AdminEnquiries from './admin/Enquiries'
 import AdminTickets from './admin/Tickets'
+import { company } from '../content'
 
 /**
  * Partner + admin portal. Loaded as a separate chunk, so the marketing page stays light.
@@ -71,7 +72,7 @@ function NotFound() {
       <h1 className="mt-4 text-5xl font-medium">This page is off target.</h1>
       <p className="mt-4 text-muted">The page you are looking for doesn’t exist.</p>
       <Link to="/" className="btn btn-primary mt-8">
-        Back to PayGoal
+        Back to {company.brand}
       </Link>
     </main>
   )

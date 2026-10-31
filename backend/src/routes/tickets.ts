@@ -5,6 +5,7 @@ import { TicketModel, TICKET_STATUSES } from '../models/Ticket.js'
 import { requireAuth } from '../middleware/auth.js'
 import { HttpError, parse } from '../middleware/errors.js'
 import { ticketCreateSchema, ticketReplySchema } from '../validation.js'
+import { BRAND } from '../config.js'
 
 /** Support tickets. Partners see their own; admins see all. */
 export const ticketRouter = Router()
@@ -57,7 +58,7 @@ ticketRouter.post('/:id/messages', async (req, res) => {
   if (ticket.status === 'closed' && !isAdmin) throw new HttpError(400, 'This ticket is closed. Please open a new one.')
 
   const { body } = parse(ticketReplySchema, req.body)
-  ticket.messages.push({ author: req.user!._id, authorName: isAdmin ? 'PayGoal Support' : req.user!.name, fromStaff: isAdmin, body })
+  ticket.messages.push({ author: req.user!._id, authorName: isAdmin ? `${BRAND} Support` : req.user!.name, fromStaff: isAdmin, body })
   ticket.status = isAdmin ? 'answered' : 'open'
   await ticket.save()
   res.status(201).json({ ticket })

@@ -31,7 +31,7 @@ export default function AuthLayout({ title, subtitle, children, aside }: { title
           <Link to="/" className="inline-flex items-center gap-2 rounded-lg text-sm font-medium text-slate-ink hover:text-ink">
             <ArrowLeft className="size-4" aria-hidden="true" /> Back to website
           </Link>
-          <Link to="/" className="rounded-lg text-ink lg:hidden" aria-label="PayGoal home">
+          <Link to="/" className="rounded-lg text-ink lg:hidden" aria-label={`${company.brand} home`}>
             <Logo />
           </Link>
         </div>

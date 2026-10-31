@@ -6,22 +6,29 @@
  * before going live.
  */
 import {
+  ArrowLeftRight,
   BadgeCheck,
+  Blocks,
   Briefcase,
   Building2,
   ChartColumn,
-  CodeXml,
+  CreditCard,
   Eye,
   Handshake,
-  Headset,
+  Lightbulb,
   Lock,
   MapPin,
   MessageSquareText,
-  Network,
+  PlaneTakeoff,
+  Receipt,
   Rocket,
+  ScanFace,
+  Server,
   ShieldCheck,
+  Smartphone,
   Store,
   Truck,
+  Tv,
   UserCheck,
   Wrench,
   Zap,
@@ -32,9 +39,14 @@ import {
 /* Company                                                            */
 /* ------------------------------------------------------------------ */
 
+// Terminal code shown with the PayGoal name everywhere on the site.
+const TERMINAL = 'PBSTerminalS'
+const BRAND = `PayGoal (${TERMINAL})`
+
 export const company = {
-  brand: 'PayGoal',
-  legalName: 'PAYGOAL BUSINESS SOLUTIONS PRIVATE LIMITED',
+  brand: BRAND,
+  legalName: `PAYGOAL BUSINESS SOLUTIONS PRIVATE LIMITED (${TERMINAL})`,
+  terminalCode: TERMINAL,
   gstin: '07AALCP7373D1Z6',
   address: 'Second Floor, Plot No. 5, Pocket 5, Rohini Sector 24, New Delhi, North Delhi, Delhi – 110085',
   website: 'paygoal.in',
@@ -114,14 +126,18 @@ export const hero = {
 /* ------------------------------------------------------------------ */
 
 export const ticker = [
-  'Business onboarding',
+  'Mobile recharge',
+  'DTH recharge',
+  'Credit card bill payment',
+  'Utility bill payments',
+  'Expense management',
+  'Travel & hotel bookings',
+  'Onboarding & verification',
+  'CRM, ERP & hosting',
+  'Reconciliation',
+  'Server management',
   'KYC assistance',
-  'Retail network support',
-  'Technology & APIs',
   'Reporting & analytics',
-  'Distributor management',
-  'Dedicated support',
-  'Pan-India reach',
 ]
 
 /* ------------------------------------------------------------------ */
@@ -133,37 +149,67 @@ export type Item = { icon: LucideIcon; title: string; body: string }
 export const services = {
   eyebrow: 'Services',
   title: 'Everything a growing business network needs.',
-  body: 'Six focused services, delivered by one accountable team. Pick what you need today and add more as you grow.',
+  body: 'From everyday recharges and bill payments to software, servers and reconciliation, delivered by one accountable team. Pick what you need today and add more as you grow.',
   items: [
+    {
+      icon: Smartphone,
+      title: 'Mobile recharge',
+      body: 'Fast prepaid mobile recharges for all major operators across India, for retailers and their customers.',
+    },
+    {
+      icon: Tv,
+      title: 'DTH recharge',
+      body: 'Quick recharges for all leading DTH and satellite TV providers, available whenever your customers need them.',
+    },
+    {
+      icon: CreditCard,
+      title: 'Credit card bill payment',
+      body: 'Convenient credit card bill payments for customers of major banks, with a clear confirmation every time.',
+    },
+    {
+      icon: Lightbulb,
+      title: 'Utility bill payments',
+      body: 'Electricity, water, gas, broadband and other utility bills, paid in one place without the queues.',
+    },
+    {
+      icon: Receipt,
+      title: 'Expense management',
+      body: 'Track, categorise and control business spending with simple tools and easy-to-read summaries.',
+    },
+    {
+      icon: PlaneTakeoff,
+      title: 'Travel & hotel bookings management',
+      body: 'Plan and manage business travel and hotel bookings, with every itinerary organised in one place.',
+    },
+    {
+      icon: ScanFace,
+      title: 'Onboarding & verification solutions',
+      body: 'Identity, document and bank account verification tools that make onboarding quick and reliable.',
+    },
+    {
+      icon: Blocks,
+      title: 'Software management, CRM, ERPs, hosting & IT services',
+      body: 'CRM and ERP setup, software management, hosting and day-to-day IT support for your business.',
+    },
+    {
+      icon: ArrowLeftRight,
+      title: 'Backend & reconciliation services',
+      body: 'Back-office operations and transaction reconciliation that keep your records accurate and up to date.',
+    },
+    {
+      icon: Server,
+      title: 'Server management',
+      body: 'Setup, monitoring, security updates and maintenance, so your servers stay fast, secure and online.',
+    },
     {
       icon: UserCheck,
       title: 'Business onboarding & KYC assistance',
       body: 'Guided document collection and verification support, so new partners get started quickly and correctly.',
     },
     {
-      icon: Store,
-      title: 'Retail network support',
-      body: 'On-ground and remote help for retail outlets, from setup and training to everyday questions.',
-    },
-    {
-      icon: CodeXml,
-      title: 'Technology & API solutions',
-      body: 'Clean integrations and tools that plug into the systems you already use, documented and supported.',
-    },
-    {
       icon: ChartColumn,
       title: 'Reporting & analytics',
-      body: 'Clear, regular reports that show how your network is performing and where to focus next.',
-    },
-    {
-      icon: Network,
-      title: 'Partner & distributor management',
-      body: 'Structured tools and processes to organise distributors, retailers and their relationships at scale.',
-    },
-    {
-      icon: Headset,
-      title: 'Dedicated customer support',
-      body: 'A real team that knows your business, reachable by phone, email and WhatsApp during working hours.',
+      body: 'Clear, regular reports that show how your business is performing and where to focus next.',
     },
   ] satisfies Item[],
 }
@@ -190,7 +236,7 @@ export const audience = {
 /* ------------------------------------------------------------------ */
 
 export const highlights = {
-  eyebrow: 'Why PayGoal',
+  eyebrow: `Why ${BRAND}`,
   title: 'Quietly reliable. Clearly accountable.',
   items: [
     {
@@ -237,7 +283,7 @@ export const steps = {
     },
     {
       icon: Rocket,
-      title: 'Grow with PayGoal',
+      title: `Grow with ${BRAND}`,
       body: 'Ongoing support, reporting and new tools as your network expands. We grow when you do.',
     },
   ] satisfies Item[],
@@ -274,7 +320,7 @@ export const trust = {
     },
   ] satisfies Item[],
   websiteNote:
-    'PayGoal never asks for card details, bank passwords or OTPs on this website, and the website does not take payments. It uses no tracking scripts.',
+    `${BRAND} never asks for card details, bank passwords or OTPs on this website, and the website does not take payments. It uses no tracking scripts.`,
   registrationTitle: 'Registered company',
 }
 
@@ -288,11 +334,11 @@ export const faq = {
   body: "Can't find what you're looking for? Reach out and a real person will reply.",
   items: [
     {
-      q: 'What does PayGoal do?',
-      a: 'PayGoal Business Solutions helps businesses and their partner networks with onboarding and KYC assistance, retail network support, technology and API solutions, reporting, distributor management and dedicated customer support.',
+      q: `What does ${BRAND} do?`,
+      a: `PayGoal Business Solutions (${TERMINAL}) offers mobile and DTH recharges, credit card and utility bill payments, expense management, travel and hotel bookings management, onboarding and verification solutions, KYC assistance, software management (CRM, ERPs, hosting and IT services), backend and reconciliation services, server management, and reporting and analytics.`,
     },
     {
-      q: 'Who can work with PayGoal?',
+      q: `Who can work with ${BRAND}?`,
       a: 'Retailers, distributors, service centres, small businesses and enterprises. If you manage customers or partners and want reliable support behind you, we would be glad to talk.',
     },
     {
@@ -328,7 +374,7 @@ export const contact = {
   whatsappText: 'Chat with us',
   hoursLabel: 'Working hours',
   detailsTitle: 'Company details',
-  mapTitle: 'PayGoal registered office on Google Maps',
+  mapTitle: `${BRAND} registered office on Google Maps`,
 
   form: {
     title: 'Send us a message',
@@ -369,7 +415,7 @@ export const legal = {
     updated: 'Last updated: [date]',
     paragraphs: [
       'This is placeholder text. Replace it with your final Terms of Use before launch.',
-      'The content on this website is provided for general information about PAYGOAL BUSINESS SOLUTIONS PRIVATE LIMITED and its services. It does not constitute an offer or a contract.',
+      `The content on this website is provided for general information about ${company.legalName} and its services. It does not constitute an offer or a contract.`,
       'Illustrations on this website, including dashboard previews, are for representation only and do not show real data.',
       'All trademarks and content on this website belong to their respective owners. For any questions, please contact us.',
     ],

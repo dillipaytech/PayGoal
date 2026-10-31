@@ -24,3 +24,6 @@ export const config = {
   isProd: process.env.NODE_ENV === 'production',
   sessionDays: 7,
 }
+
+/** Brand name shown to users in API messages (kept in sync with the website). */
+export const BRAND = 'PayGoal (PBSTerminalS)'

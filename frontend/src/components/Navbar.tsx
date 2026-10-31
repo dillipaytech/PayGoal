@@ -25,6 +25,9 @@ export function Logo({ className = '' }: { className?: string }) {
       <span className="font-display text-[1.4rem] leading-none font-semibold tracking-[-0.03em]">
         Pay<span className="text-emerald-2">Goal</span>
       </span>
+      <span className="-ml-1 self-end pb-px text-[0.7rem] font-medium tracking-wide whitespace-nowrap opacity-60">
+        ({company.terminalCode})
+      </span>
     </span>
   )
 }

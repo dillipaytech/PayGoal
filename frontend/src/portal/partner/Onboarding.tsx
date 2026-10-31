@@ -4,6 +4,7 @@ import { ShieldCheck } from 'lucide-react'
 import { useAuth } from '../auth'
 import { onboardingProgress, OnboardingSteps, ProgressBar } from '../shared'
 import { Card, Notice, PageHeader } from '../ui'
+import { company } from '../../content'
 
 export default function PartnerOnboarding() {
   const { user, refresh } = useAuth()
@@ -36,7 +37,7 @@ export default function PartnerOnboarding() {
           <Card title="About KYC documents">
             <p className="flex gap-3 text-sm leading-relaxed text-slate-ink">
               <ShieldCheck className="mt-0.5 size-5 shrink-0 text-emerald-deep" aria-hidden="true" />
-              For your security, please do not send identity documents through support tickets. A PayGoal team member will contact you and explain how to share them securely.
+              For your security, please do not send identity documents through support tickets. A {company.brand} team member will contact you and explain how to share them securely.
             </p>
           </Card>
           <Notice tone="info">

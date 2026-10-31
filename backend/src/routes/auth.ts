@@ -5,6 +5,7 @@ import { UserModel, publicUser } from '../models/User.js'
 import { clearSession, requireAuth, setSession } from '../middleware/auth.js'
 import { HttpError, parse } from '../middleware/errors.js'
 import { loginSchema, signupSchema } from '../validation.js'
+import { BRAND } from '../config.js'
 
 export const authRouter = Router()
 
@@ -51,7 +52,7 @@ authRouter.post('/login', authLimiter, async (req, res) => {
 
   const ok = await bcrypt.compare(password, user?.passwordHash ?? DUMMY_HASH)
   if (!user || !ok) throw new HttpError(401, 'Incorrect email or password.')
-  if (user.status === 'suspended') throw new HttpError(403, 'This account is suspended. Please contact PayGoal.')
+  if (user.status === 'suspended') throw new HttpError(403, `This account is suspended. Please contact ${BRAND}.`)
 
   user.lastLoginAt = new Date()
   await user.save()

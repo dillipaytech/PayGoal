@@ -5,6 +5,7 @@ import { api, ApiError, formatDateTime, type Ticket, type TicketStatus } from '.
 import { useAuth } from './auth'
 import { useResource } from './useResource'
 import { Button, Card, Field, Notice, PageHeader, Select, Spinner, StatusBadge, Textarea } from './ui'
+import { company } from '../content'
 
 /** A single support ticket conversation. Used by both partners and admins. */
 export default function TicketThread() {
@@ -99,7 +100,7 @@ export default function TicketThread() {
       ) : (
         <Card>
           <form onSubmit={send} noValidate className="space-y-4">
-            <Field label={isAdmin ? 'Reply as PayGoal Support' : 'Add a reply'} error={replyError}>
+            <Field label={isAdmin ? `Reply as ${company.brand} Support` : 'Add a reply'} error={replyError}>
               {(id, d) => <Textarea id={id} value={reply} onChange={(e) => setReply(e.target.value)} aria-invalid={!!replyError} aria-describedby={d} />}
             </Field>
             <div className="flex justify-end">

@@ -4,6 +4,7 @@ import { api, ApiError, type User } from '../lib/api'
 import AuthLayout from './AuthLayout'
 import { homeFor, useAuth } from './auth'
 import { Button, Field, FullPageSpinner, Input, Notice } from './ui'
+import { company } from '../content'
 
 export default function Login() {
   const { user, loading, setUser } = useAuth()
@@ -39,7 +40,7 @@ export default function Login() {
   return (
     <AuthLayout
       title="Welcome back"
-      subtitle="Log in to your PayGoal partner account."
+      subtitle={`Log in to your ${company.brand} partner account.`}
       aside={
         <>
           Your onboarding, support and updates, <em className="text-gradient italic">in one place.</em>
@@ -85,7 +86,7 @@ export default function Login() {
             Create an account
           </Link>
         </p>
-        <p className="text-center text-xs text-slate-ink">Forgot your password? Contact PayGoal support and we will reset it for you.</p>
+        <p className="text-center text-xs text-slate-ink">Forgot your password? Contact {company.brand} support and we will reset it for you.</p>
       </form>
     </AuthLayout>
   )

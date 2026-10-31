@@ -16,6 +16,7 @@ import {
 import { Logo } from '../components/Navbar'
 import { useAuth } from './auth'
 import { StatusBadge } from './ui'
+import { company } from '../content'
 
 type NavItem = { to: string; label: string; icon: LucideIcon; end?: boolean }
 
@@ -48,7 +49,7 @@ export default function PortalLayout() {
 
   const sidebar = (
     <div className="flex h-full flex-col">
-      <NavLink to="/" className="rounded-lg px-2 text-snow" aria-label="PayGoal website">
+      <NavLink to="/" className="rounded-lg px-2 text-snow" aria-label={`${company.brand} website`}>
         <Logo />
       </NavLink>
       <p className="mt-8 px-3 text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase">
@@ -104,7 +105,7 @@ export default function PortalLayout() {
 
       {/* Mobile top bar + drawer */}
       <header className="sticky top-0 z-30 flex h-16 items-center justify-between bg-ink px-4 text-snow lg:hidden">
-        <NavLink to="/" aria-label="PayGoal website" className="rounded-lg">
+        <NavLink to="/" aria-label={`${company.brand} website`} className="rounded-lg">
           <Logo />
         </NavLink>
         <button

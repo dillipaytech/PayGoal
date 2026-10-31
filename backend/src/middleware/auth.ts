@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from 'express'
 import jwt from 'jsonwebtoken'
-import { config } from '../config.js'
+import { BRAND, config } from '../config.js'
 import { UserModel, type UserDoc } from '../models/User.js'
 import { HttpError } from './errors.js'
 
@@ -44,7 +44,7 @@ export async function requireAuth(req: Request, _res: Response, next: NextFuncti
 
   const user = await UserModel.findById(payload.sub)
   if (!user) throw new HttpError(401, 'Please log in.')
-  if (user.status === 'suspended') throw new HttpError(403, 'This account is suspended. Please contact PayGoal.')
+  if (user.status === 'suspended') throw new HttpError(403, `This account is suspended. Please contact ${BRAND}.`)
   req.user = user
   next()
 }

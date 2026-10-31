@@ -248,6 +248,9 @@ export default function Footer() {
 
       <div className="above-trail">
         <Wordmark />
+        <p className="pb-8 text-center font-display text-sm tracking-[0.3em] text-gold/80 md:text-base">
+          ({company.terminalCode})
+        </p>
       </div>
 
       <LegalDialog which={doc} onClose={() => setDoc(null)} />
