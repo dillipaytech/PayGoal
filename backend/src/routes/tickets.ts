@@ -34,7 +34,7 @@ ticketRouter.get('/', async (req, res) => {
 })
 
 ticketRouter.post('/', async (req, res) => {
-  if (req.user!.role !== 'partner') throw new HttpError(403, 'Only partners can open tickets.')
+  if (req.user!.role !== 'partner') throw new HttpError(403, 'Only users can open tickets.')
   const body = parse(ticketCreateSchema, req.body)
   const ticket = await TicketModel.create({
     user: req.user!._id,

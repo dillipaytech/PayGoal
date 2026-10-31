@@ -27,7 +27,7 @@ function DashboardCard() {
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
         role="img"
-        aria-label="Illustrative preview of a partner dashboard showing an activity chart and onboarding statuses. Not real data."
+        aria-label="Illustrative preview of a user dashboard showing an activity chart and onboarding statuses. Not real data."
         className="glass rounded-3xl p-5 shadow-[0_40px_80px_-30px_rgb(0_0_0/0.7)] sm:p-6"
       >
         {/* Header */}

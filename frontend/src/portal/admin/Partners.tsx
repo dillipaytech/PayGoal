@@ -32,12 +32,12 @@ export default function AdminPartners() {
 
   return (
     <div className="space-y-8">
-      <PageHeader title="Partners" description="Review sign-ups, track onboarding and manage partner accounts." />
+      <PageHeader title="Users" description="Review sign-ups, track onboarding and manage user accounts." />
 
       <div className="flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
           <Search className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-slate-ink" aria-hidden="true" />
-          <Input aria-label="Search partners" placeholder="Search name, email, business or city" value={search} onChange={(e) => setSearch(e.target.value)} className="pl-10" />
+          <Input aria-label="Search users" placeholder="Search name, email, business or city" value={search} onChange={(e) => setSearch(e.target.value)} className="pl-10" />
         </div>
         <Select
           aria-label="Filter by status"
@@ -67,8 +67,8 @@ export default function AdminPartners() {
           </div>
         ) : !data?.partners.length ? (
           <div className="p-6">
-            <EmptyState icon={<Users className="size-5" />} title="No partners found">
-              {q || status ? 'Try a different search or filter.' : 'Partners appear here when they sign up.'}
+            <EmptyState icon={<Users className="size-5" />} title="No users found">
+              {q || status ? 'Try a different search or filter.' : 'Users appear here when they sign up.'}
             </EmptyState>
           </div>
         ) : (
@@ -87,7 +87,7 @@ export default function AdminPartners() {
                 {data.partners.map((p) => (
                   <tr key={p._id} className="hover:bg-ink/[0.02]">
                     <td className="px-6 py-4">
-                      <Link to={`/admin/partners/${p._id}`} className="font-semibold text-ink hover:text-emerald-deep hover:underline">
+                      <Link to={`/admin/users/${p._id}`} className="font-semibold text-ink hover:text-emerald-deep hover:underline">
                         {p.business?.name || '—'}
                       </Link>
                       <div className="text-xs text-slate-ink">{[p.business?.city, p.business?.state].filter(Boolean).join(', ')}</div>

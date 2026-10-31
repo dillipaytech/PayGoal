@@ -30,7 +30,7 @@ const NAV: Record<'partner' | 'admin', NavItem[]> = {
   ],
   admin: [
     { to: '/admin', label: 'Overview', icon: LayoutDashboard, end: true },
-    { to: '/admin/partners', label: 'Partners', icon: Users },
+    { to: '/admin/users', label: 'Users', icon: Users },
     { to: '/admin/enquiries', label: 'Enquiries', icon: Inbox },
     { to: '/admin/tickets', label: 'Support tickets', icon: LifeBuoy },
   ],
@@ -53,7 +53,7 @@ export default function PortalLayout() {
         <Logo />
       </NavLink>
       <p className="mt-8 px-3 text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase">
-        {user.role === 'admin' ? 'Admin' : 'Partner portal'}
+        {user.role === 'admin' ? 'Admin' : 'User portal'}
       </p>
       <nav aria-label="Portal" className="mt-3">
         <ul className="space-y-1">

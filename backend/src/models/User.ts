@@ -10,7 +10,7 @@ export const DEFAULT_ONBOARDING = [
   { key: 'business_details', label: 'Business details' },
   { key: 'kyc_documents', label: 'KYC documents' },
   { key: 'verification', label: 'Verification' },
-  { key: 'agreement', label: 'Partner agreement' },
+  { key: 'agreement', label: 'User agreement' },
   { key: 'activation', label: 'Account activation' },
 ]
 
@@ -53,6 +53,9 @@ export type User = InferSchemaType<typeof userSchema>
 export type UserDoc = HydratedDocument<User>
 export const UserModel = model('User', userSchema)
 
+/** Step labels always come from DEFAULT_ONBOARDING, so renaming a step also updates existing accounts. */
+const STEP_LABELS = new Map(DEFAULT_ONBOARDING.map((s) => [s.key, s.label]))
+
 /** Safe public shape of a user (never includes the password hash). */
 export function publicUser(u: UserDoc) {
   return {
@@ -63,7 +66,13 @@ export function publicUser(u: UserDoc) {
     name: u.name,
     phone: u.phone,
     business: u.business,
-    onboarding: u.onboarding,
+    onboarding: u.onboarding.map((s) => ({
+      key: s.key,
+      label: STEP_LABELS.get(s.key) ?? s.label,
+      status: s.status,
+      note: s.note,
+      updatedAt: s.updatedAt,
+    })),
     createdAt: u.createdAt,
     lastLoginAt: u.lastLoginAt,
   }

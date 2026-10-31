@@ -17,11 +17,11 @@ export default function AuthLayout({ title, subtitle, children, aside }: { title
           <Logo />
         </Link>
         <div className="relative mt-auto">
-          <p className="eyebrow text-gold">Partner portal</p>
+          <p className="eyebrow text-gold">User portal</p>
           <div className="mt-6 font-display text-4xl leading-tight xl:text-5xl">{aside}</div>
           <div className="hairline mt-10" />
           <p className="mt-6 text-xs leading-relaxed text-muted">
-            {company.legalName} · GSTIN {company.gstin}
+            {company.legalName}
           </p>
         </div>
       </aside>

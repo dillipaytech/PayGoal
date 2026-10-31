@@ -13,7 +13,7 @@ export default function AdminTickets() {
     <div className="space-y-8">
       <PageHeader
         title="Support tickets"
-        description="Questions from partners. Replying marks a ticket as answered."
+        description="Questions from users. Replying marks a ticket as answered."
         actions={
           <Select aria-label="Filter by status" value={status} onChange={(e) => setParams(e.target.value ? { status: e.target.value } : {})} className="!w-44">
             <option value="">All</option>
@@ -30,7 +30,7 @@ export default function AdminTickets() {
           <Notice>{error}</Notice>
         ) : !data?.tickets.length ? (
           <EmptyState icon={<LifeBuoy className="size-5" />} title="No tickets">
-            {status ? 'No tickets with this status.' : 'Partner tickets will appear here.'}
+            {status ? 'No tickets with this status.' : 'User tickets will appear here.'}
           </EmptyState>
         ) : (
           <ul className="divide-y divide-ink/[0.07]">

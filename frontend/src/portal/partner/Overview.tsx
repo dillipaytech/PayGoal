@@ -9,7 +9,7 @@ import { Card, EmptyState, Notice, PageHeader, Spinner, StatusBadge } from '../u
 
 const STATUS_MESSAGE = {
   pending: 'Thanks for signing up. Our team is reviewing your account and will contact you about the next onboarding steps.',
-  approved: 'Your partner account is active.',
+  approved: 'Your user account is active.',
   rejected: 'We could not approve your account at this time. Please open a support ticket if you have questions.',
   suspended: 'This account is suspended.',
 }

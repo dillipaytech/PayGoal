@@ -46,8 +46,8 @@ export default function Signup() {
 
   return (
     <AuthLayout
-      title="Become a partner"
-      subtitle="Create your account. Our team will review it and guide you through onboarding."
+      title="Create a user account"
+      subtitle="Sign up below. Our team will review your account and guide you through onboarding."
       aside={
         <>
           Join a network built to <em className="text-gradient italic">score.</em>
@@ -89,7 +89,7 @@ export default function Signup() {
           Create account
         </Button>
         <p className="text-center text-sm text-slate-ink">
-          Already a partner?{' '}
+          Already have an account?{' '}
           <Link to="/login" className="font-semibold text-emerald-deep underline-offset-4 hover:underline">
             Log in
           </Link>

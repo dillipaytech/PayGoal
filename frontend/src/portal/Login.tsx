@@ -40,7 +40,7 @@ export default function Login() {
   return (
     <AuthLayout
       title="Welcome back"
-      subtitle={`Log in to your ${company.brand} partner account.`}
+      subtitle={`Log in to your ${company.brand} user account.`}
       aside={
         <>
           Your onboarding, support and updates, <em className="text-gradient italic">in one place.</em>
@@ -81,7 +81,7 @@ export default function Login() {
           Log in
         </Button>
         <p className="text-center text-sm text-slate-ink">
-          New partner?{' '}
+          New user?{' '}
           <Link to="/signup" className="font-semibold text-emerald-deep underline-offset-4 hover:underline">
             Create an account
           </Link>

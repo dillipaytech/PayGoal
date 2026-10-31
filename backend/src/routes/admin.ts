@@ -47,9 +47,9 @@ adminRouter.get('/partners', async (req, res) => {
 })
 
 async function loadPartner(id: string) {
-  if (!isValidObjectId(id)) throw new HttpError(404, 'Partner not found.')
+  if (!isValidObjectId(id)) throw new HttpError(404, 'User not found.')
   const user = await UserModel.findOne({ _id: id, role: 'partner' })
-  if (!user) throw new HttpError(404, 'Partner not found.')
+  if (!user) throw new HttpError(404, 'User not found.')
   return user
 }
 

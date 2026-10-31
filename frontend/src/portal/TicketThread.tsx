@@ -7,7 +7,7 @@ import { useResource } from './useResource'
 import { Button, Card, Field, Notice, PageHeader, Select, Spinner, StatusBadge, Textarea } from './ui'
 import { company } from '../content'
 
-/** A single support ticket conversation. Used by both partners and admins. */
+/** A single support ticket conversation. Used by both users and admins. */
 export default function TicketThread() {
   const { id } = useParams()
   const { user } = useAuth()

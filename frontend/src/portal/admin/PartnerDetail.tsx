@@ -37,8 +37,8 @@ function StepEditor({ partnerId, stepKey, status, note, onSaved }: { partnerId: 
         <option value="done">Done</option>
       </Select>
       <input
-        aria-label="Note shown to partner"
-        placeholder="Note shown to the partner (optional)"
+        aria-label="Note shown to user"
+        placeholder="Note shown to the user (optional)"
         value={n}
         onChange={(e) => setN(e.target.value)}
         maxLength={500}
@@ -62,7 +62,7 @@ export default function AdminPartnerDetail() {
   const [busy, setBusy] = useState('')
 
   if (loading) return <Spinner />
-  if (error || !data) return <Notice>{error || 'Partner not found.'}</Notice>
+  if (error || !data) return <Notice>{error || 'User not found.'}</Notice>
   const p = data.partner
   const progress = onboardingProgress(p.onboarding)
   const update = (partner: User) => setData({ ...data, partner })
@@ -101,8 +101,8 @@ export default function AdminPartnerDetail() {
 
   return (
     <div className="space-y-8">
-      <Link to="/admin/partners" className="inline-flex items-center gap-2 rounded-lg text-sm font-medium text-slate-ink hover:text-ink">
-        <ArrowLeft className="size-4" aria-hidden="true" /> All partners
+      <Link to="/admin/users" className="inline-flex items-center gap-2 rounded-lg text-sm font-medium text-slate-ink hover:text-ink">
+        <ArrowLeft className="size-4" aria-hidden="true" /> All users
       </Link>
       <PageHeader title={p.business.name || p.name} description={<StatusBadge status={p.status} />} />
       {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
@@ -130,7 +130,7 @@ export default function AdminPartnerDetail() {
                   </Button>
                 ))}
             </div>
-            <p className="mt-3 text-xs text-slate-ink">Suspended partners cannot log in.</p>
+            <p className="mt-3 text-xs text-slate-ink">Suspended users cannot log in.</p>
           </Card>
 
           <Card title="Internal note">
@@ -166,7 +166,7 @@ export default function AdminPartnerDetail() {
 
           <Card title="Support tickets">
             {data.tickets.length === 0 ? (
-              <p className="text-sm text-slate-ink">No tickets from this partner.</p>
+              <p className="text-sm text-slate-ink">No tickets from this user.</p>
             ) : (
               <ul className="divide-y divide-ink/[0.07]">
                 {data.tickets.map((t) => (

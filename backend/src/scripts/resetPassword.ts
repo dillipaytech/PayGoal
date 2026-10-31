@@ -1,7 +1,7 @@
 /**
  * Sets a new password for an existing account (partner or admin) without changing its role.
  *
- *   npm run reset-password -- --email partner@example.com
+ *   npm run reset-password -- --email user@example.com
  */
 import { createInterface } from 'node:readline/promises'
 import { parseArgs } from 'node:util'
@@ -12,7 +12,7 @@ import { UserModel } from '../models/User.js'
 const { values } = parseArgs({ options: { email: { type: 'string' } } })
 const email = values.email?.trim().toLowerCase()
 if (!email) {
-  console.error('Usage: npm run reset-password -- --email partner@example.com')
+  console.error('Usage: npm run reset-password -- --email user@example.com')
   process.exit(1)
 }
 

@@ -8,13 +8,17 @@
 import {
   ArrowLeftRight,
   BadgeCheck,
+  Banknote,
   Blocks,
-  Briefcase,
-  Building2,
   ChartColumn,
+  ClipboardList,
+  Cloud,
   CreditCard,
   Eye,
+  GraduationCap,
   Handshake,
+  HeartHandshake,
+  Landmark,
   Lightbulb,
   Lock,
   MapPin,
@@ -25,12 +29,12 @@ import {
   ScanFace,
   Server,
   ShieldCheck,
+  ShoppingCart,
   Smartphone,
+  Stethoscope,
   Store,
-  Truck,
   Tv,
   UserCheck,
-  Wrench,
   Zap,
   type LucideIcon,
 } from 'lucide-react'
@@ -47,7 +51,6 @@ export const company = {
   brand: BRAND,
   legalName: `PAYGOAL BUSINESS SOLUTIONS PRIVATE LIMITED (${TERMINAL})`,
   terminalCode: TERMINAL,
-  gstin: '07AALCP7373D1Z6',
   address: 'Second Floor, Plot No. 5, Pocket 5, Rohini Sector 24, New Delhi, North Delhi, Delhi – 110085',
   website: 'paygoal.in',
   websiteUrl: 'https://paygoal.in',
@@ -81,7 +84,7 @@ export const nav = {
     { label: 'Contact', href: '#contact' },
   ],
   cta: { label: 'Contact us', href: '#contact' },
-  login: { label: 'Partner login', href: '/login' },
+  login: { label: 'User login', href: '/login' },
 }
 
 /* ------------------------------------------------------------------ */
@@ -97,11 +100,11 @@ export const hero = {
     'Onboarding, technology and on-ground support that help businesses across India grow with confidence.',
   primaryCta: { label: 'Get in touch', href: '#contact' },
   secondaryCta: { label: 'Explore services', href: '#services' },
-  notes: ['Registered in New Delhi', 'Pan-India partner support', 'Human help, not bots'],
+  notes: ['Registered in New Delhi', 'Pan-India user support', 'Human help, not bots'],
 
   // Mock dashboard. Purely illustrative: no real names or figures.
   dashboard: {
-    title: 'Partner overview',
+    title: 'User overview',
     badge: 'Illustrative',
     chartLabel: 'Network activity',
     period: 'This quarter',
@@ -112,7 +115,7 @@ export const hero = {
     progressLabel: 'Setup progress',
     progressText: 'Step 3 of 4',
     statuses: [
-      { label: 'Retail partner · North zone', status: 'Verified', tone: 'ok' },
+      { label: 'Retail user · North zone', status: 'Verified', tone: 'ok' },
       { label: 'KYC documents', status: 'In review', tone: 'pending' },
       { label: 'API sandbox', status: 'Connected', tone: 'ok' },
       { label: 'Support request', status: 'Resolved', tone: 'ok' },
@@ -126,18 +129,18 @@ export const hero = {
 /* ------------------------------------------------------------------ */
 
 export const ticker = [
-  'Mobile recharge',
-  'DTH recharge',
-  'Credit card bill payment',
-  'Utility bill payments',
-  'Expense management',
-  'Travel & hotel bookings',
-  'Onboarding & verification',
-  'CRM, ERP & hosting',
+  'Mobile Recharge',
+  'DTH Recharge',
+  'Credit Card Bill Payments',
+  'Utility Bill Payments',
+  'Expense Management',
+  'Travel & Hotel Bookings',
+  'Onboarding & Verification',
+  'CRM, ERP & Hosting',
   'Reconciliation',
-  'Server management',
-  'KYC assistance',
-  'Reporting & analytics',
+  'Server Management',
+  'KYC Assistance',
+  'Reporting & Analytics',
 ]
 
 /* ------------------------------------------------------------------ */
@@ -153,62 +156,62 @@ export const services = {
   items: [
     {
       icon: Smartphone,
-      title: 'Mobile recharge',
+      title: 'Mobile Recharge',
       body: 'Fast prepaid mobile recharges for all major operators across India, for retailers and their customers.',
     },
     {
       icon: Tv,
-      title: 'DTH recharge',
+      title: 'DTH Recharge',
       body: 'Quick recharges for all leading DTH and satellite TV providers, available whenever your customers need them.',
     },
     {
       icon: CreditCard,
-      title: 'Credit card bill payment',
+      title: 'Credit Card Bill Payments',
       body: 'Convenient credit card bill payments for customers of major banks, with a clear confirmation every time.',
     },
     {
       icon: Lightbulb,
-      title: 'Utility bill payments',
+      title: 'Utility Bill Payments',
       body: 'Electricity, water, gas, broadband and other utility bills, paid in one place without the queues.',
     },
     {
       icon: Receipt,
-      title: 'Expense management',
+      title: 'Expense Management',
       body: 'Track, categorise and control business spending with simple tools and easy-to-read summaries.',
     },
     {
       icon: PlaneTakeoff,
-      title: 'Travel & hotel bookings management',
+      title: 'Travel & Hotel Bookings Management',
       body: 'Plan and manage business travel and hotel bookings, with every itinerary organised in one place.',
     },
     {
       icon: ScanFace,
-      title: 'Onboarding & verification solutions',
+      title: 'Onboarding & Verification Solutions',
       body: 'Identity, document and bank account verification tools that make onboarding quick and reliable.',
     },
     {
       icon: Blocks,
-      title: 'Software management, CRM, ERPs, hosting & IT services',
+      title: 'Software Management, CRM, ERPs, Hosting & IT Services',
       body: 'CRM and ERP setup, software management, hosting and day-to-day IT support for your business.',
     },
     {
       icon: ArrowLeftRight,
-      title: 'Backend & reconciliation services',
+      title: 'Backend & Reconciliation Services',
       body: 'Back-office operations and transaction reconciliation that keep your records accurate and up to date.',
     },
     {
       icon: Server,
-      title: 'Server management',
+      title: 'Server Management',
       body: 'Setup, monitoring, security updates and maintenance, so your servers stay fast, secure and online.',
     },
     {
       icon: UserCheck,
-      title: 'Business onboarding & KYC assistance',
-      body: 'Guided document collection and verification support, so new partners get started quickly and correctly.',
+      title: 'Business Onboarding & KYC Assistance',
+      body: 'Guided document collection and verification support, so new users get started quickly and correctly.',
     },
     {
       icon: ChartColumn,
-      title: 'Reporting & analytics',
+      title: 'Reporting & Analytics',
       body: 'Clear, regular reports that show how your business is performing and where to focus next.',
     },
   ] satisfies Item[],
@@ -219,16 +222,22 @@ export const services = {
 /* ------------------------------------------------------------------ */
 
 export const audience = {
-  eyebrow: "Who it's for",
-  title: 'Built for every link in the chain.',
-  body: 'Whether you run a single shop or a national network, we shape our support around how you actually work.',
+  eyebrow: 'Useful for',
+  title: 'Built for businesses across industries.',
+  body: 'From online stores and fintechs to NGOs and logistics teams, our services fit the way you work.',
   items: [
-    { icon: Store, title: 'Retailers', body: 'Simple setup and quick answers, so the counter keeps moving.' },
-    { icon: Truck, title: 'Distributors', body: 'Visibility and tools to manage the retailers you serve.' },
-    { icon: Wrench, title: 'Service centres', body: 'Reliable processes and support for walk-in customers.' },
-    { icon: Briefcase, title: 'Small businesses', body: 'Enterprise-quality help without enterprise complexity.' },
-    { icon: Building2, title: 'Enterprises', body: 'Integrations, reporting and a team that scales with you.' },
+    { icon: ShoppingCart, title: 'E-Commerce Website Companies', body: 'Recharges, bill payments and back-office support that keep online stores running smoothly.' },
+    { icon: Store, title: 'Digital Marketplace Companies', body: 'Seller onboarding, verification and reconciliation for multi-vendor platforms.' },
+    { icon: Banknote, title: 'Fintech Companies', body: 'Onboarding, KYC and reconciliation services that help you scale with confidence.' },
+    { icon: Landmark, title: 'NBFCs', body: 'Verification, reporting and backend operations for lending businesses.' },
+    { icon: PlaneTakeoff, title: 'Travel Companies', body: 'Travel and hotel bookings management, with expenses tracked in one place.' },
+    { icon: GraduationCap, title: 'Education Companies', body: 'Software, hosting and IT support for schools, institutes and ed-tech teams.' },
+    { icon: Cloud, title: 'SaaS Based Companies', body: 'Server management, hosting and reconciliation for growing software products.' },
+    { icon: ClipboardList, title: 'Vendor Management Companies', body: 'Onboarding, verification and expense tools to manage vendors at scale.' },
+    { icon: HeartHandshake, title: 'NGOs', body: 'Simple expense management and clear reporting for your programmes.' },
+    { icon: Stethoscope, title: 'Health Care & Logistics', body: 'Reliable IT, servers and back-office support for time-critical operations.' },
   ] satisfies Item[],
+  more: '& Many More…',
 }
 
 /* ------------------------------------------------------------------ */
@@ -252,7 +261,7 @@ export const highlights = {
     {
       icon: MapPin,
       title: 'Pan-India support',
-      body: 'Headquartered in New Delhi, supporting partners in cities and towns across India.',
+      body: 'Headquartered in New Delhi, supporting users in cities and towns across India.',
     },
     {
       icon: Eye,
@@ -335,27 +344,19 @@ export const faq = {
   items: [
     {
       q: `What does ${BRAND} do?`,
-      a: `PayGoal Business Solutions (${TERMINAL}) offers mobile and DTH recharges, credit card and utility bill payments, expense management, travel and hotel bookings management, onboarding and verification solutions, KYC assistance, software management (CRM, ERPs, hosting and IT services), backend and reconciliation services, server management, and reporting and analytics.`,
+      a: `PayGoal Business Solutions (${TERMINAL}) offers Mobile Recharge, DTH Recharge, Credit Card Bill Payments, Utility Bill Payments, Expense Management, Travel & Hotel Bookings Management, Onboarding & Verification Solutions, Business Onboarding & KYC Assistance, Software Management (CRM, ERPs, Hosting & IT Services), Backend & Reconciliation Services, Server Management, and Reporting & Analytics.`,
     },
     {
       q: `Who can work with ${BRAND}?`,
-      a: 'Retailers, distributors, service centres, small businesses and enterprises. If you manage customers or partners and want reliable support behind you, we would be glad to talk.',
+      a: 'E-Commerce Website Companies, Digital Marketplace Companies, Fintech Companies, NBFCs, Travel Companies, Education Companies, SaaS Based Companies, Vendor Management Companies, NGOs, Health Care & Logistics businesses, and many more. If you want reliable support behind your business, we would be glad to talk.',
     },
     {
       q: 'How does onboarding work?',
       a: 'After a short conversation about your needs, we share a clear checklist, help you prepare the required documents and walk you through setup and training. You will have one point of contact throughout.',
     },
     {
-      q: 'Do you offer technology or API integration?',
-      a: 'Yes. We provide integrations and tools that connect with your existing systems, along with documentation and support from our technology team.',
-    },
-    {
       q: 'Where do you operate?',
-      a: 'Our registered office is in Rohini Sector 24, New Delhi. We support partners across India through remote and on-ground assistance.',
-    },
-    {
-      q: 'Does this website take payments?',
-      a: 'No. The website and partner portal have no payment features, and we will never ask for card details, bank passwords or OTPs here. The contact form and partner accounts only collect the details needed to respond to you and support your business.',
+      a: 'Our registered office is in Rohini Sector 24, New Delhi. We support users across India through remote and on-ground assistance.',
     },
   ],
 }
@@ -379,7 +380,15 @@ export const contact = {
   form: {
     title: 'Send us a message',
     note: 'We use these details only to reply to you.',
-    interests: ['Becoming a partner', 'Onboarding & KYC', 'Technology & APIs', 'Reporting', 'Something else'],
+    interests: [
+      'Opening a user account',
+      'Recharges & Bill Payments',
+      'Expense & Travel Management',
+      'Onboarding & Verification',
+      'Software, IT & Server Management',
+      'Reconciliation & Reporting',
+      'Something else',
+    ],
     submit: 'Send message',
     successTitle: 'Thank you, message received.',
     successBody: 'Our team will get back to you soon.',
@@ -391,7 +400,7 @@ export const contact = {
 /* ------------------------------------------------------------------ */
 
 export const footer = {
-  tagline: 'Smart business solutions for retailers, distributors and enterprises across India.',
+  tagline: 'Smart business solutions for companies across industries in India.',
   quickLinksTitle: 'Explore',
   legalTitle: 'Legal',
   companyTitle: 'Company',
@@ -401,20 +410,18 @@ export const footer = {
 export const legal = {
   privacy: {
     title: 'Privacy Policy',
-    updated: 'Last updated: [date]',
+    updated: 'Last updated: 31 October 2026',
     paragraphs: [
-      'This is placeholder text. Replace it with your final Privacy Policy before launch.',
-      'This website does not use tracking cookies or analytics scripts. Partner accounts use a single essential cookie to keep you logged in.',
+      'This website does not use tracking cookies or analytics scripts. User accounts use a single essential cookie to keep you logged in.',
       'If you contact us through the contact form, email, phone or WhatsApp, we use the details you share only to respond to you and to provide the services you request.',
-      'If you create a partner account, we store your name, contact details and business details to manage your account, onboarding and support requests.',
+      'If you create a user account, we store your name, contact details and business details to manage your account, onboarding and support requests.',
       'We do not sell personal information. For questions about privacy, write to us at the email address listed on this page.',
     ],
   },
   terms: {
     title: 'Terms of Use',
-    updated: 'Last updated: [date]',
+    updated: 'Last updated: 31 October 2026',
     paragraphs: [
-      'This is placeholder text. Replace it with your final Terms of Use before launch.',
       `The content on this website is provided for general information about ${company.legalName} and its services. It does not constitute an offer or a contract.`,
       'Illustrations on this website, including dashboard previews, are for representation only and do not show real data.',
       'All trademarks and content on this website belong to their respective owners. For any questions, please contact us.',

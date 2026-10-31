@@ -17,8 +17,8 @@ export default function AdminOverview() {
   if (error || !data) return <Notice>{error}</Notice>
 
   const tiles = [
-    { label: 'Partners awaiting review', value: data.partners.pending, icon: UserCheck, to: '/admin/partners?status=pending' },
-    { label: 'Approved partners', value: data.partners.approved, icon: Users, to: '/admin/partners?status=approved' },
+    { label: 'Users awaiting review', value: data.partners.pending, icon: UserCheck, to: '/admin/users?status=pending' },
+    { label: 'Approved users', value: data.partners.approved, icon: Users, to: '/admin/users?status=approved' },
     { label: 'Open support tickets', value: data.openTickets, icon: LifeBuoy, to: '/admin/tickets?status=open' },
     { label: 'New website enquiries', value: data.newEnquiries, icon: Inbox, to: '/admin/enquiries?status=new' },
   ]
@@ -44,14 +44,14 @@ export default function AdminOverview() {
         ))}
       </ul>
 
-      <Card title="Newest partners" action={<Link to="/admin/partners" className="text-sm font-semibold text-emerald-deep hover:underline">All partners</Link>}>
+      <Card title="Newest users" action={<Link to="/admin/users" className="text-sm font-semibold text-emerald-deep hover:underline">All users</Link>}>
         {data.recentPartners.length === 0 ? (
-          <p className="text-sm text-slate-ink">No partners have signed up yet.</p>
+          <p className="text-sm text-slate-ink">No users have signed up yet.</p>
         ) : (
           <ul className="divide-y divide-ink/[0.07]">
             {data.recentPartners.map((p) => (
               <li key={p._id}>
-                <Link to={`/admin/partners/${p._id}`} className="flex items-center justify-between gap-4 py-3 hover:text-emerald-deep">
+                <Link to={`/admin/users/${p._id}`} className="flex items-center justify-between gap-4 py-3 hover:text-emerald-deep">
                   <span className="min-w-0">
                     <span className="block truncate font-medium">{p.business?.name || p.name}</span>
                     <span className="block truncate text-xs text-slate-ink">

@@ -8,7 +8,7 @@ export default function PartnerReports() {
       <PageHeader title="Reports" description="Business reports and analytics for your account." />
       <Card>
         <EmptyState icon={<ChartColumn className="size-5" />} title="Reports are coming soon">
-          We are building clear, regular reports for partners. They will appear here once your account is active.
+          We are building clear, regular reports for users. They will appear here once your account is active.
         </EmptyState>
       </Card>
       <div className="grid gap-5 sm:grid-cols-2">

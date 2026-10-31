@@ -1,6 +1,6 @@
 import { company } from '../content'
 
-/** Legal name, GSTIN, registered address and website, as one definition list. */
+/** Legal name, registered address and website, as one definition list. */
 export default function CompanyBlock({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
   const label = tone === 'dark' ? 'text-muted' : 'text-slate-ink'
   return (
@@ -8,10 +8,6 @@ export default function CompanyBlock({ tone = 'dark' }: { tone?: 'dark' | 'light
       <div>
         <dt className={`text-[0.7rem] font-semibold tracking-[0.18em] uppercase ${label}`}>Legal name</dt>
         <dd className="mt-1.5 font-semibold tracking-wide">{company.legalName}</dd>
-      </div>
-      <div>
-        <dt className={`text-[0.7rem] font-semibold tracking-[0.18em] uppercase ${label}`}>GSTIN</dt>
-        <dd className="mt-1.5 font-mono text-[0.95rem] tracking-wider">{company.gstin}</dd>
       </div>
       <div>
         <dt className={`text-[0.7rem] font-semibold tracking-[0.18em] uppercase ${label}`}>Registered address</dt>

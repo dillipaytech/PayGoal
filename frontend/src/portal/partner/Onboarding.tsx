@@ -17,7 +17,7 @@ export default function PartnerOnboarding() {
 
   return (
     <div className="space-y-8">
-      <PageHeader title="Onboarding" description="Track each step of getting your partner account set up. Our team updates these as they go." />
+      <PageHeader title="Onboarding" description="Track each step of getting your user account set up. Our team updates these as they go." />
 
       <div className="grid gap-5 lg:grid-cols-[1.4fr_1fr]">
         <Card title="Your steps">

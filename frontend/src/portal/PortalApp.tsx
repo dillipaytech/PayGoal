@@ -52,8 +52,8 @@ export default function PortalApp() {
           }
         >
           <Route index element={<AdminOverview />} />
-          <Route path="partners" element={<AdminPartners />} />
-          <Route path="partners/:id" element={<AdminPartnerDetail />} />
+          <Route path="users" element={<AdminPartners />} />
+          <Route path="users/:id" element={<AdminPartnerDetail />} />
           <Route path="enquiries" element={<AdminEnquiries />} />
           <Route path="tickets" element={<AdminTickets />} />
           <Route path="tickets/:id" element={<TicketThread />} />
