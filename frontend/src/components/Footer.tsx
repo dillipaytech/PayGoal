@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform, type MotionValue } from 'motion/react'
-import { X } from 'lucide-react'
+import { Globe, Mail, Phone, X } from 'lucide-react'
 import { company, footer, legal, nav } from '../content'
 import { setScrollLocked } from '../lib/scroll'
 import { Logo } from './Navbar'
@@ -59,9 +59,48 @@ function LegalDialog({ which, onClose }: { which: LegalKey | null; onClose: () =
           </div>
           <div className="hairline my-7" />
           <div className="space-y-4 text-[0.95rem] leading-relaxed text-snow/85">
-            {doc.paragraphs.map((p) => (
+            {doc.paragraphs?.map((p) => (
               <p key={p}>{p}</p>
             ))}
+            {doc.sections?.map((s, i) => (
+              <section key={s.heading ?? i} className="pt-2">
+                {s.heading && <h3 className="mb-2 font-sans text-base font-semibold text-gold">{s.heading}</h3>}
+                <div className="space-y-2">
+                  {s.body?.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+                {s.list && (
+                  <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-emerald-2">
+                    {s.list.map((li) => (
+                      <li key={li}>{li}</li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            ))}
+            {doc.contact && (
+              <ul className="space-y-1.5 rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm">
+                <li>
+                  <Mail className="mr-2 inline size-4 text-emerald-2" aria-hidden="true" />
+                  <a href={`mailto:${company.email}`} className="underline-offset-4 hover:underline">
+                    {company.email}
+                  </a>
+                </li>
+                <li>
+                  <Globe className="mr-2 inline size-4 text-emerald-2" aria-hidden="true" />
+                  <a href={company.websiteUrl} className="underline-offset-4 hover:underline">
+                    www.{company.website}
+                  </a>
+                </li>
+                <li>
+                  <Phone className="mr-2 inline size-4 text-emerald-2" aria-hidden="true" />
+                  <a href={company.phoneHref} className="underline-offset-4 hover:underline">
+                    {company.phoneDisplay}
+                  </a>
+                </li>
+              </ul>
+            )}
           </div>
           <p className="mt-8 text-xs text-muted">{company.legalName}</p>
         </div>

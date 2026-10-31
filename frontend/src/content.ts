@@ -55,15 +55,14 @@ export const company = {
   website: 'paygoal.in',
   websiteUrl: 'https://paygoal.in',
 
-  // PLACEHOLDER: replace with the real email address
-  email: 'contact@paygoal.in',
+  email: 'support@paygoal.in',
 
-  // PLACEHOLDER: replace with the real phone number (display + dialable form)
-  phoneDisplay: '+91 XXXXX XXXXX',
-  phoneHref: 'tel:+91XXXXXXXXXX',
+  // Phone (display + dialable form)
+  phoneDisplay: '+91 93550 80884',
+  phoneHref: 'tel:+919355080884',
 
-  // PLACEHOLDER: replace with the real WhatsApp number (digits only, with country code 91)
-  whatsappHref: 'https://wa.me/91XXXXXXXXXX',
+  // WhatsApp: assumed to be the same number as the phone. Change if different.
+  whatsappHref: 'https://wa.me/919355080884',
 
   // PLACEHOLDER: replace with real working hours
   hours: 'Monday – Saturday, 10:00 am – 6:00 pm IST',
@@ -406,8 +405,18 @@ export const footer = {
   companyTitle: 'Company',
 }
 
-// PLACEHOLDER: replace with policies reviewed by your legal advisor.
-export const legal = {
+export type LegalSection = { heading?: string; body?: string[]; list?: string[] }
+export type LegalDoc = {
+  title: string
+  updated: string
+  paragraphs?: string[]
+  sections?: LegalSection[]
+  /** Show the company contact block (email, website, phone) at the end. */
+  contact?: boolean
+}
+
+// Have these policies reviewed by your legal advisor.
+export const legal: Record<'privacy' | 'terms' | 'refund' | 'cancellation', LegalDoc> = {
   privacy: {
     title: 'Privacy Policy',
     updated: 'Last updated: 31 October 2026',
@@ -426,5 +435,83 @@ export const legal = {
       'Illustrations on this website, including dashboard previews, are for representation only and do not show real data.',
       'All trademarks and content on this website belong to their respective owners. For any questions, please contact us.',
     ],
+  },
+  refund: {
+    title: 'Refund Policy',
+    updated: 'Last updated: 31 October 2026',
+    sections: [
+      {
+        heading: 'Important Notice',
+        body: [
+          `Once a User chooses to avail any service plan/offer announced by ${company.legalName} and agrees to buy that plan, such payment shall not be refunded by ${BRAND} under any circumstances.`,
+        ],
+      },
+      {
+        heading: 'KYC Verification',
+        body: [
+          `Post receipt of payment, ${BRAND} will create a User ID only after successful KYC verification. If the KYC is unsuccessful, a User ID cannot be created.`,
+        ],
+      },
+      {
+        heading: 'Refund Process',
+        body: [
+          `Transactions that fail due to issues directly attributable to ${BRAND} will be refunded within 3–21 working days. Only the actual transaction amount will be refunded, excluding fees.`,
+          'For any queries, please contact our customer care.',
+        ],
+      },
+    ],
+    contact: true,
+  },
+  cancellation: {
+    title: 'Cancellation Policy',
+    updated: 'Last updated: 31 October 2026',
+    paragraphs: [
+      `${company.legalName}`,
+      `Corporate Address: ${company.address}`,
+      `At ${BRAND}, we take API service delivery seriously and expect clients to fully understand the scope and terms of service before activation. Please read the following:`,
+    ],
+    sections: [
+      {
+        heading: '1. No Cancellation after Activation',
+        body: [
+          'Once an API service has been activated, cancellations are not permitted. Clients are strongly advised to thoroughly review service documentation, technical requirements and compatibility before making any payments or proceeding with activation.',
+        ],
+      },
+      {
+        heading: '2. Contract-Based Services',
+        body: [
+          'For services offered under a formal contract, cancellation terms and conditions will be clearly outlined in the signed agreement. Clients must refer to their specific agreement for details regarding notice periods, penalties and refund eligibility.',
+        ],
+      },
+      {
+        heading: '3. Early Termination Fees',
+        body: [
+          'If a client initiates cancellation before the end of a contractual term, they may be required to pay an early termination fee as defined in their service agreement.',
+        ],
+      },
+      {
+        heading: `4. Termination by ${BRAND}`,
+        body: [`${BRAND} reserves the right to suspend or terminate API services without prior notice if the client:`],
+        list: [
+          'Violates the Terms of Service',
+          'Engages in fraudulent, illegal or unethical activities',
+          'Misuses or abuses the API, affecting system performance or security',
+        ],
+      },
+      {
+        heading: '5. Refund Policy',
+        body: [
+          `In the event of termination due to policy violations or misuse, no refunds will be issued. In exceptional cases, refund eligibility will be determined solely at the discretion of ${company.legalName}.`,
+        ],
+      },
+      {
+        heading: '6. Final Note',
+        body: [
+          `By activating or integrating with ${BRAND}'s API services, clients agree to abide by this cancellation policy along with all applicable terms of use and service-level agreements.`,
+          'For questions or clarification, please contact:',
+        ],
+      },
+    ],
+    contact: true,
   },
 }
