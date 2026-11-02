@@ -1,4 +1,4 @@
-import { Building2, Info } from 'lucide-react'
+import { Building2, Info, Landmark } from 'lucide-react'
 import { trust } from '../content'
 import CompanyBlock from '../components/CompanyBlock'
 import SectionHeading from '../components/SectionHeading'
@@ -51,6 +51,51 @@ export default function Trust() {
             <div className="mt-8 text-snow">
               <CompanyBlock />
             </div>
+          </div>
+        </Reveal>
+      </div>
+
+      <div className="above-trail shell mt-20 grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+        {/* Banking */}
+        <Reveal>
+          <div className="h-full rounded-3xl border border-white/[0.08] bg-white/[0.02] p-7 md:p-8">
+            <div className="flex items-center gap-3">
+              <span className="flex size-10 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.03] text-emerald-2">
+                <Landmark className="size-[1.1rem]" strokeWidth={1.75} aria-hidden="true" />
+              </span>
+              <div>
+                <h3 className="text-2xl font-medium text-snow">{trust.banking.title}</h3>
+                <p className="text-sm text-muted">{trust.banking.body}</p>
+              </div>
+            </div>
+            <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {trust.banking.items.map((bank) => (
+                <li
+                  key={bank}
+                  className="flex min-h-14 items-center justify-center rounded-xl border border-white/[0.08] bg-ink-card/60 px-3 py-3 text-center text-sm font-semibold text-snow/90"
+                >
+                  {bank}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+
+        {/* Certifications */}
+        <Reveal delay={0.1}>
+          <div className="h-full rounded-3xl border border-gold/20 bg-gold/[0.03] p-7 md:p-8">
+            <h3 className="text-2xl font-medium text-snow">{trust.certifications.title}</h3>
+            <div className="hairline mt-4 mb-6" />
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+              {trust.certifications.items.map((c) => (
+                <li key={c.title} className="flex items-center gap-3">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald to-emerald-2 text-ink">
+                    <c.icon className="size-[1.1rem]" strokeWidth={1.9} aria-hidden="true" />
+                  </span>
+                  <span className="text-sm font-semibold text-snow">{c.title}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </div>

@@ -21,6 +21,7 @@ import {
   Landmark,
   Lightbulb,
   Lock,
+  LockKeyhole,
   MapPin,
   MessageSquareText,
   PlaneTakeoff,
@@ -29,6 +30,7 @@ import {
   ScanFace,
   Server,
   ShieldCheck,
+  ShieldHalf,
   ShoppingCart,
   Smartphone,
   Stethoscope,
@@ -112,10 +114,10 @@ export const hero = {
     progressLabel: 'Setup progress',
     progressText: 'Step 3 of 4',
     statuses: [
-      { label: 'Retail user · North zone', status: 'Verified', tone: 'ok' },
-      { label: 'KYC documents', status: 'In review', tone: 'pending' },
-      { label: 'API sandbox', status: 'Connected', tone: 'ok' },
-      { label: 'Support request', status: 'Resolved', tone: 'ok' },
+      { label: 'Business profile', status: 'Verified', tone: 'ok' },
+      { label: 'Identity check', status: 'In review', tone: 'pending' },
+      { label: 'Recharge & bill payments', status: 'Active', tone: 'ok' },
+      { label: 'Help request', status: 'Resolved', tone: 'ok' },
     ] as const,
     footnote: 'Illustrative interface. Not real data.',
   },
@@ -328,6 +330,23 @@ export const trust = {
   websiteNote:
     `${BRAND} never asks for card details, bank passwords or OTPs on this website, and the website does not take payments. It uses no tracking scripts.`,
   registrationTitle: 'Registered company',
+
+  banking: {
+    title: 'Our Banking',
+    body: 'Banks we work with across India.',
+    items: ['RBL Bank', 'AU Small Finance Bank', 'CSB Bank', 'Axis Bank', 'State Bank of India', 'HDFC Bank', 'IndusInd Bank', 'YES BANK'],
+  },
+
+  certifications: {
+    title: 'Certifications & Security',
+    items: [
+      { icon: BadgeCheck, title: 'ISO Certified' },
+      { icon: LockKeyhole, title: 'Secured Login' },
+      { icon: ShieldHalf, title: 'Antivirus Enabled' },
+      { icon: Rocket, title: 'Startup India' },
+      { icon: ShieldCheck, title: 'SSL Secured' },
+    ],
+  },
 }
 
 /* ------------------------------------------------------------------ */
